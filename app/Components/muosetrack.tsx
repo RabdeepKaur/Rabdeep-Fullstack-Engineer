@@ -11,7 +11,7 @@ export default function FireflyScene() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let enableBloom = true;
+    let enableBloom = true; 
 
     class Star {
       x: number;
@@ -57,7 +57,7 @@ export default function FireflyScene() {
     
 
     let stars: Star[] = [];
-    function initStars(count = 200) {
+    function initStars(count = 500) {
       stars = [];
       for (let i = 0; i < count; i++) {
         stars.push(new Star());
