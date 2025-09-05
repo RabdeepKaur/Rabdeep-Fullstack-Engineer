@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FireflyBackground from "./Components/muosetrack"
+import   AuroraParticles from "./Components/background"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +26,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Firefly background - fixed position, behind everything */}
-        <FireflyBackground />
-        
+     
+         < AuroraParticles/>
         {/* Your app content with higher z-index */}
         <div className="relative z-10"></div>
         {children}

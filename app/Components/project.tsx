@@ -13,7 +13,10 @@ export default function Project() {
   ];
 
   return (
+    <>
+          <h1 className=" flex text-white font-bold text-3xl item-center justify-center">PROJECTS</h1>
     <div className="flex flex-row items-center justify-center h-screen z-1">
+
       <div className="flex flex-col items-center justify-center gap-6">
         {projects.map((item, index) => (
           <div
@@ -46,5 +49,6 @@ export default function Project() {
         ))}
       </div>
     </div>
+    </>
   );
 }

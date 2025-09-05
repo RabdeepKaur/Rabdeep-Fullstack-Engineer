@@ -1,5 +1,5 @@
 "use client";
-
+{/* I wanna use this mouse trackign component but let see what i can do 
 import { useEffect, useRef } from "react";
 
 export default function FireflyScene() {
@@ -167,7 +167,7 @@ export default function FireflyScene() {
 
   return (
     <div className="fixed inset-0 bg-black pointer-events-none z-10">
-      {/* Aurora bands + stars CSS layer */}
+      {/* Aurora bands + stars CSS layer 
       <div className="absolute inset-0 pointer-events-none mix-blend-normal z-10">
         <div className="light-band"></div>
         <div className="light-band"></div>
@@ -175,7 +175,7 @@ export default function FireflyScene() {
         <div className="stars"></div>
       </div>
 
-      {/* Firefly Canvas */}
+      {/* Firefly Canvas 
       <canvas
         ref={canvasRef}
         id="fireflyCanvas"
@@ -183,4 +183,4 @@ export default function FireflyScene() {
       ></canvas>
     </div>
   );
-}
+}*/}
