@@ -226,7 +226,7 @@ function EnhancedAuroraWaves() {
 
   return (
     <mesh ref={meshRef} position={[0, 0, -25]}>
-      <planeGeometry args={[50, 180, 64, 64]} />
+      <planeGeometry args={[60, 180, 64, 64]} />
       <shaderMaterial
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}

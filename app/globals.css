@@ -1,6 +1,7 @@
 @import "tailwindcss";
-
-
+:root {
+  --font-cosmic: 'CosmicVibrant', sans-serif;
+}
 
 
 

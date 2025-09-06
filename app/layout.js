@@ -1,17 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
-import FireflyBackground from "./Components/muosetrack"
-import   AuroraParticles from "./Components/background"
+//import FireflyBackground from "./Components/muosetrack"
+import   AuroraParticles from "./Components/background";
+import localFont from 'next/font/local';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const cosmic = localFont({
+  src: './assests/cosmic-vibrant-font/CosmicVibrant-WywzY.otf',
+  display: 'swap',
+  variable: '--font-cosmic',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Hire me",
@@ -22,8 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-      
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    className={`${cosmic.className}`}
       >
         {/* Firefly background - fixed position, behind everything */}
      
