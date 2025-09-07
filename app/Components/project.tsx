@@ -1,133 +1,100 @@
 import Image from "next/image";
-import rejectme from "../assests/rejectme.png";
+import lockme from "../assests/lockme.png";
+import landingpage from "../assests/landingpage.png"
+import proof from "../assests/proof.png"
+import previous from "../assests/previous.png"
 
 export default function Project() {
   const projects = [
     {
-      src: rejectme,
+      src:  landingpage,
       title: "RejectMe",
       link: "https://reject-me.vercel.app/",
       codelink: "https://github.com/RabdeepKaur/RejectMe",
-      description: "A project that demonstrates rejection handling.",
+      description: "AI website that generates personalized rejection emails for interview processes. Attracted 80+ visitors and ranked 36 on peerlist.",
     },
     {
-      src: rejectme,
+      src: lockme,
       title: "Lock me in",
       codelink: "https://github.com/RabdeepKaur/Lock-me-in",
-      description: "A project that demonstrates rejection handling.",
+      description: "Chrome extension that restricts browsing to a single website until timer ends. Gained 5+ active users.",
     },
     {
-      src: rejectme,
+      src: proof,
       title: "Proof of work",
       link: "https://reject-me.vercel.app/",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
-      description: "A project that demonstrates rejection handling.",
+      description: "A comprehensive project demonstrating blockchain proof-of-work concepts and implementation.",
     },
     {
-      src: rejectme,
+      src: previous,
       title: "Previous year question",
       link: "https://reject-me.vercel.app/",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
-      description: "A project that demonstrates rejection handling.",
+      description: "Educational platform for accessing and managing previous year examination questions.",
     },
   ];
+return (
+  <div className="py-16">
+    <h1 className="text-white font-bold text-5xl text-center mb-16">
+      PROJECTS
+    </h1>
 
-  return (
-    <>
-      <h1 className="flex text-white font-bold text-3xl items-center justify-center mb-8">
-        PROJECTS
-      </h1>
-      <div className="flex flex-row items-center justify-center min-h-screen z-1 ">
-        <div className="flex flex-row items-center justify-center gap-8 flex-wrap">
-          {projects.map((item, index) => (
-            <div
-              key={index}
-              className="relative group cursor-pointer"
-              style={{ width: "280px", height: "350px" }}
-            >
-              {/* Image Puzzle Piece (Top) */}
-              <div
-                className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-900 backdrop-blur-lg border-0 shadow-xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 flex items-center justify-center"
-                style={{
-                  width: "200px",
-                  height: "160px",
-                  clipPath: `circle(
-                    0% 0%, 
-                    70% 0%, 
-                    85% 15%, 
-                    100% 15%, 
-                    100% 40%, 
-                    85% 40%, 
-                   
-                  )`,
-                  zIndex: 2,
-                }}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  width={80}
-                  height={80}
-                  className="rounded-lg drop-shadow-lg"
-                />
-              </div>
-
-              {/* Text Puzzle Piece (Bottom) */}
-              <div
-                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-gray-900 backdrop-blur-lg border-0 shadow-xl p-6 transition-all duration-500 group-hover:scale-105 group-hover:-rotate-1"
-                style={{
-                  width: "240px",
-                  height: "220px",
-                  clipPath: `circle(
-                    15% 0%, 
-                    30% 0%, 
-                    45% 15%, 
-                    60% 0%, 
-                    85% 0%, 
-                    100% 15%, 
-                    100% 40%, 
-                    85% 55%, 
-                    
-                  )`,
-                  zIndex: 1,
-                }}
-              >
-                <div className="pt-12 text-white text-center overflow-hidden">
-                  <h3 className="text-xl font-bold mb-3 text-white drop-shadow-lg">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm mb-4 text-gray-200 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <div className="flex gap-4 justify-center">
-                    {item.link && (
-                      <a 
-                        href={item.link} 
-                        className="text-cyan-300 hover:text-cyan-100 hover:underline font-medium transition-colors duration-200"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </a>
-                    )}
-                    <a 
-                      href={item.codelink} 
-                      className="text-pink-300 hover:text-pink-100 hover:underline font-medium transition-colors duration-200"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hover Effect Glow */}
-              <div className="absolute inset-0 bg-green-300 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-xl"></div>
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+        {projects.map((item, index) => (
+          <div
+            key={index}
+            className="bg-black rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-500"
+          >
+            {/* Image Section */}
+            <div className="w-full h-60 overflow-hidden">
+              <Image
+                src={item.src}
+                alt={item.title}
+                width={500}
+                height={500}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
             </div>
-          ))}
-        </div>
+
+            {/* Content Section */}
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-white mb-3 truncate">
+                {item.title}
+              </h3>
+
+              <p className="text-sm text-gray-300 mb-5 line-clamp-3">
+                {item.description}
+              </p>
+
+              {/* Links */}
+              <div className="flex gap-4">
+                {item.link && (
+                  <a
+                    href={item.link}
+                    className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200 underline-offset-2 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                  </a>
+                )}
+                <a
+                  href={item.codelink}
+                  className="text-pink-400 hover:text-pink-300 text-sm font-medium transition-colors duration-200 underline-offset-2 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
-  );
+    </div>
+  </div>
+);
+
 }

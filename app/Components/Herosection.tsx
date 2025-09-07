@@ -1,6 +1,8 @@
  import { FaGithub,FaLinkedin, FaTwitter    } from 'react-icons/fa';
 import { BiSpreadsheet } from "react-icons/bi";
 import Link from "next/link"
+import { FaCircle } from "react-icons/fa";
+import { FlipWords } from './flipword';
 
 export default function Herosection(){
 return(
@@ -9,14 +11,17 @@ return(
   {/* First main div */}
  <div className="relative flex flex-col items-center justify-center">
   {/* Overlapping Div */}
-  <div className="absolute -top-15 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center w-[300px] h-[80px] text-white border-0 backdrop-blur-lg rounded-xl shadow-lg py-1 z-10">
-    <p> 🟢 Open for new Opportunities</p>
+  <div className="absolute -top-15 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center w-[300px] h-[80px] text-white bg-black border-0 backdrop-blur-lg rounded-xl shadow-lg py-1 z-10">
+ <div className="flex flex-row items-center space-x-3">
+        <FaCircle className="text-green-500 text-xl" />
+        <span className="text-lg">Open for new Opportunities</span>
+      </div>
   </div>
 
   {/* Main Div */}
-  <div className="flex flex-col items-center justify-center w-[600px] h-[250px] text-3xl backdrop-blur-lg  rounded-xl shadow-lg py-4 border-0">
+  <div className="flex flex-col items-center justify-center w-[600px] h-[250px] text-3xl backdrop-blur-lg  bg-black rounded-xl shadow-lg py-4 border-0">
     <p className="text-lg font-semibold text-white mr-2">
-      I make Backend, Frontend, Websites and Digital Social Experiences
+   I make  <FlipWords words={["Backends", "Frontends", "webstie", "Digital marketing"]} />
     </p>
     <p className="font-bold text-3xl text-gray-100">Rabdeep Kaur Badwal</p>
     <p className="text-lg font-semibold text-slate-100 mt-2 py-1">
