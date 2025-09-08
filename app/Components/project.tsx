@@ -23,14 +23,14 @@ export default function Project() {
     {
       src: proof,
       title: "Proof of work",
-      link: "",
+      link: " ",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
       description: "This is my digital diary it contains everything I’ve learned while building my products and projects.",
     },
     {
       src: previous,
       title: "Previous year question",
-      link: "",
+      link: " ",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
       description: "AI power SAAS platefrom where you upload question paper and notes and get length to marks perfect ratio answers.",
     },
