@@ -6,6 +6,6 @@
 
 ## License:
 This project does not have a formal license. You are free to fork and use it, but please give proper credit or 
-## Hire me I will make a better one for you .
+# Hire me I will make a better one for you .
 
-## Made with ☕and 🥹
+ Made with ☕and 🥹
