@@ -4,6 +4,7 @@ import landingpage from "../assests/landingpage.png"
 import proof from "../assests/proof.png"
 import previous from "../assests/previous.png"
 
+
 export default function Project() {
   const projects = [
     {
@@ -22,30 +23,30 @@ export default function Project() {
     {
       src: proof,
       title: "Proof of work",
-      link: "https://reject-me.vercel.app/",
+      link: "",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
-      description: "A comprehensive project demonstrating blockchain proof-of-work concepts and implementation.",
+      description: "This is my digital diary it contains everything I’ve learned while building my products and projects.",
     },
     {
       src: previous,
       title: "Previous year question",
-      link: "https://reject-me.vercel.app/",
+      link: "",
       codelink: "https://github.com/RabdeepKaur/Proof-of-Work",
-      description: "Educational platform for accessing and managing previous year examination questions.",
+      description: "AI power SAAS platefrom where you upload question paper and notes and get length to marks perfect ratio answers.",
     },
   ];
 return (
-  <div className="py-16">
-    <h1 className="text-white font-bold text-5xl text-center mb-16">
+  <div className="py-30">
+    <h1 className="text-white font-bold text-5xl text-center mb-16 ">
       PROJECTS
     </h1>
 
     <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 ">
         {projects.map((item, index) => (
           <div
             key={index}
-            className="bg-black rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-500"
+            className="bg-black rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-500 group "
           >
             {/* Image Section */}
             <div className="w-full h-60 overflow-hidden">
@@ -64,7 +65,7 @@ return (
                 {item.title}
               </h3>
 
-              <p className="text-sm text-gray-300 mb-5 line-clamp-3">
+              <p className="text-sm text-gray-300 mb-5 line-clamp-10">
                 {item.description}
               </p>
 

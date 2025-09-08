@@ -12,7 +12,7 @@ const cosmic = localFont({
 
 */
 export const metadata = {
-  title: "Rabdeep's portiflio - Hire me ",
+  title: "Rabdeep's Portfolio - Hire me ",
   description: "The perfect guide to hire Rabdeep , this is a portfilio website ",
 };
 

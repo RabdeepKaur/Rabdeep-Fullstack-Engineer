@@ -11,7 +11,7 @@ export default function Work() {
       title: "Full Stack Developer Intern",
       src:pahacare,
       company: "Panha care",
-      duration: "August-Present (Remote)",
+      duration: "August -- Present (Remote)",
       description: [
       "Converted Figma designs into a fully responsive Next.js front-end, ensuring a modern and user-friendly UI.",
       "Developed an SEO-friendly and performance-optimized blog platform using Next.js for better search rankings and faster load times.",
@@ -53,7 +53,7 @@ export default function Work() {
       
       <div className="max-w-7xl mx-auto">
         {/* Horizontal Timeline Container */}
-        <div className="relative overflow-x-auto pb-8">
+        <div className="relative overflow-x-auto pb-10">
           <div className="flex items-center min-w-max px-8">
             
             {/* Horizontal Timeline Line */}
@@ -64,13 +64,25 @@ export default function Work() {
                
                 
                 {/* Experience Card */}
-                <div className={`${index % 2 === 0 ? 'mb-40' : 'mt-50'} mx-6`}>
-                  <div className="w-80 bg-black backdrop-blur-lg border border-gray-200 rounded-xl shadow-lg p-6 mt-3 transform transition-all duration-300 hover:scale-105 hover:shadow-xl group ">
+                <div className={`${index % 2 === 0 ? 'mb-40' : 'mt-55'} mx-6`}>
+                  <div className="w-80 bg-black backdrop-blur-lg border border-gray-200 rounded-xl shadow-lg p-6 mt-3 transform transition-all duration-300 hover:h-auto hover:shadow-xl group ">
                     
                     {/* Card Arrow */}
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 ${index % 2 === 0 ? 'bottom-0 translate-y-full' : 'top-0 -translate-y-full'} w-0 h-0`}>
-                      <div className={`${index % 2 === 0 ? 'border-t-[15px] border-white border-b-0' : 'border-b-[15px] border-b-white border-t-0'} border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent`}></div>
-                    </div>
+                 <div
+  className={`absolute left-1/2 transform -translate-x-1/2 ${
+    index % 2 === 0
+      ? 'bottom-0 translate-y-[110%]' // arrow goes below box
+      : 'top-0 -translate-y-[300%]'   // arrow goes above box
+  } w-0 h-1`}
+>
+  <div
+    className={`${
+      index % 2 === 0
+        ? 'border-t-[15px] border-white border-b-0'
+        : 'border-b-[15px] border-b-white'
+    } border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent`}
+  ></div>
+</div>
                     
                     <div className="space-y-3">
                       <h3 className="text-lg font-bold text-white leading-tight">
@@ -96,8 +108,8 @@ export default function Work() {
                         </div>
                       )}
                       
-                     <div className="relative">
-  <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-40">
+               <div className="relative">
+  <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-100">
     <ul className="list-disc list-inside text-sm text-gray-100 leading-relaxed space-y-1">
       {Array.isArray(experience.description) ? (
         experience.description.map((point, idx) => (
@@ -108,8 +120,7 @@ export default function Work() {
       )}
     </ul>
   </div>
-</div>
-                    </div>
+</div>            </div>
                   </div> 
                 </div>
                 
