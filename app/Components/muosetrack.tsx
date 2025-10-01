@@ -1,5 +1,5 @@
 "use client";
-{/* I wanna use this mouse trackign component but let see what i can do 
+// I wanna use this mouse trackign component but let see what i can do 
 import { useEffect, useRef } from "react";
 
 export default function FireflyScene() {
@@ -12,7 +12,7 @@ export default function FireflyScene() {
     canvas.height = window.innerHeight;
 
     let enableBloom = true; 
-
+//star componenets
     class Star {
       x: number;
       y: number;
@@ -57,7 +57,7 @@ export default function FireflyScene() {
     
 
     let stars: Star[] = [];
-    function initStars(count = 500) {
+    function initStars(count = 600) {
       stars = [];
       for (let i = 0; i < count; i++) {
         stars.push(new Star());
@@ -65,8 +65,8 @@ export default function FireflyScene() {
     }
 
     const particle = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
+      x: window.innerWidth,
+      y: window.innerHeight ,
       radius: 5,
       glowRadius: 30,
       angle: 0,
@@ -167,7 +167,7 @@ export default function FireflyScene() {
 
   return (
     <div className="fixed inset-0 bg-black pointer-events-none z-10">
-      {/* Aurora bands + stars CSS layer 
+    
       <div className="absolute inset-0 pointer-events-none mix-blend-normal z-10">
         <div className="light-band"></div>
         <div className="light-band"></div>
@@ -175,7 +175,7 @@ export default function FireflyScene() {
         <div className="stars"></div>
       </div>
 
-      {/* Firefly Canvas 
+       Firefly Canvas 
       <canvas
         ref={canvasRef}
         id="fireflyCanvas"
@@ -183,4 +183,4 @@ export default function FireflyScene() {
       ></canvas>
     </div>
   );
-}*/}
+}
