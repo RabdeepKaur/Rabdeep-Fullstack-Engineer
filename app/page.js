@@ -1,10 +1,10 @@
-import Herosection from "./Components/Herosection";
-import Work from "./Components/work";
-import Project from "./Components/project"
-import Achivement from "./Components/Achivements";
-import Skill from "./Components/Skill";
+import Herosection from "../app/Home/page";
+import Work from "../app/Experiences/page";
+import Project from "../app/Projects/page";
+import Achivement from "../app/Achievement/page";
+import Skill from "../app/Skills/page";
 import FireflyScene from "./Components/muosetrack";
-import Opensource from "./Components/Opensource";
+import Opensource from "../app/opensorce/page";
 import Footer from "./Components/footer";
 
 export default function Home() {

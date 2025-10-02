@@ -2,7 +2,7 @@
 import { BiSpreadsheet } from "react-icons/bi";
 import Link from "next/link"
 import { FaCircle } from "react-icons/fa";
-import { FlipWords } from './flipword';
+import { FlipWords } from '../Components/flipword';
 
 export default function Herosection(){
 return(
