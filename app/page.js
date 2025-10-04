@@ -2,7 +2,7 @@ import Herosection from "../app/Home/page";
 import Work from "../app/Experiences/page";
 import Project from "../app/Projects/page";
 import Achivement from "../app/Achievement/page";
-import Skill from "../app/Skills/page";
+import Skill from "../app/skills/page";
 import FireflyScene from "./Components/muosetrack";
 import Opensource from "../app/opensorce/page";
 import Footer from "./Components/footer";
