@@ -30,13 +30,15 @@
 ]
     return(
 <>
-<section className='p-20 justify-center items-center'>
-<h1 className='text-4xl text-white z-10 justify-center items-center px-40'>Open source Contribution</h1>
-        <div className="grid gap-6 mt-4 py-10">
+<section className='min-h-screen container items-center justify-center flex-col'>
+    <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
+      <div className="container">
+<h1 className='text-2xl text-white mt-5 mb-5'>Open source Contribution</h1>
+        <div className="flex flex-col space-y-6">
           {Opensource.map((exp, index) => (
             <div
               key={index}
-              className="border rounded-xl shadow-md px-40"
+              className="group"
             >
               <div className="flex items-center gap-4">
                 <Image
@@ -61,6 +63,8 @@
               </ul>
             </div>
           ))}
+          </div>
+        </div>
         </div>
   </section>
 </>

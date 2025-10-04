@@ -17,10 +17,12 @@ import { TbBrandThreejs } from "react-icons/tb";
 
 export default function ContactMe() {
   return (
-<div className="flex flex-col  text-white py-3">
-  <h2 className="text-4xl py-4  px-60">Skills</h2>
+<div className="min-h-screen container items-center justify-center flex-col">
+  <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
+    <div className="container">
+  <h2 className="text-2xl text-white mt-5 mb-5">Skills</h2>
 
-  <section className="flex flex-wrap gap-6 justify-center text-5xl backdrop-blur-lg  rounded-2xl shadow-lg py-2 px-65">
+  <section className="flex flex-col space-y-6">
     <FaReact title="React" className="hover:text-cyan-400 transition" />
     <SiNextdotjs title="Next.js" className="hover:text-gray-300 transition" />
     <SiExpress title="Express" className="hover:text-gray-400 transition" />
@@ -42,6 +44,8 @@ export default function ContactMe() {
     <TbBrandFramerMotion title="Framer Motion" className="hover:text-pink-500 transition" />
     <TbBrandThreejs title="Three.js" className="hover:text-gray-200 transition" />
   </section>
+  </div>
+  </div>
 </div>
    
   );

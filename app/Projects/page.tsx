@@ -7,6 +7,13 @@ import previous from "../assests/previous.png"
 
 export default function Project() {
   const projects = [
+      {
+      src: previous,
+      title: "Previous year question",
+      link: 'https://previousyearquestions-psi.vercel.app/',
+      codelink: 'https://github.com/RabdeepKaur/Proof-of-Work',
+      description: "AI power SAAS platefrom where you upload question paper and notes and get length to marks perfect ratio answers.",
+    },
     {
       src:  landingpage,
       title: "RejectMe",
@@ -20,45 +27,43 @@ export default function Project() {
       codelink: 'https://github.com/RabdeepKaur/Lock-me-in',
       description: "Chrome extension that restricts browsing to a single website until timer ends. Gained 5+ active users.",
     },
-    {
-      src: previous,
-      title: "Previous year question",
-      link: 'https://previousyearquestions-psi.vercel.app/',
-      codelink: 'https://github.com/RabdeepKaur/Proof-of-Work',
-      description: "AI power SAAS platefrom where you upload question paper and notes and get length to marks perfect ratio answers.",
-    },
   ];
 return (
   
-<section className="p-20 justify-center items-center">
-  <h1 className="text-4xl text-white z-10 justify-center items-center px-40">
-    PROJECTS
-  </h1>
-  <div className="grid gap-6 mt-4 py-5 px-40">
+<section className="min-h-screen container items-center justify-center flex-col">
+  <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
+    <div className="container">
+   <h1 className="text-2xl text-white mt-5 mb-5">Projects</h1>
+  
+  <div className="flex flex-col space-y-6">
     {projects.map((exp, index) => (
       <div
         key={index}
-        className="border rounded-xl shadow-md p-6 "
+        className="group "
       >
       
-        <div className="flex flex-row items-center gap-3">
-          <Image
-            src={exp.src}
-            width={40}
-            height={40}
-            className="rounded-full"
-            alt={`${exp.title} logo`}
-          />
-          <h2 className="text-xl font-semibold text-gray-50">
+      <div className="border rounded-xl shadow-md px-6 py-6 transition">
+        <h2 className="text-xl font-semibold text-gray-50 group-hover:text-white">
             {exp.title}
           </h2>
-        </div>
- <p className="mt-4 text-gray-300">{exp.description}</p>
+                       {/* Header: Image + Title + Company */}
+                       <div className="flex items-center gap-4">
+                         <Image
+                           src={exp.src}
+                           alt={"exp.title"}
+                           width={60}
+                           height={60}
+                           className="rounded-full mb-10"
+                         />
+                         <div>
+          
+        
+ <p className="text-gray-300 ">{exp.description}</p>
 
-        <div className="flex flex-row gap-4 mt-2">
+        <div className="flex flex-row ">
       {exp.link && (
   <Link href={exp.link} target="_blank">
-    <button className="px-2 py-2    text-sm text-black bg-white rounded-lg">
+    <button className="px-2 py-2 text-sm text-white font-semibold underline">
       Live link
     </button>
   </Link>
@@ -66,14 +71,19 @@ return (
 
 {exp.codelink && (
   <Link href={exp.codelink} target="_blank">
-    <button className="px-2 py-2  text-sm text-black  bg-white rounded-lg">
+    <button className="px-2 py-2  text-sm text-white font-semibold underline">
       Code
     </button>
   </Link>
 )}
+</div>
         </div>
       </div>
+      </div>
+      </div>
     ))}
+  </div>
+  </div>
   </div>
 </section>
 
