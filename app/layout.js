@@ -20,12 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-    //className={`${cosmic.className}`}
+  
       >
-        {/* Firefly background - fixed position, behind everything */}
      
          < FireflyBackground/>
-        {/* Your app content with higher z-index */}
         <div className="relative z-10"></div>
         {children}
       </body>

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import pahacare from "../assests/panhacare.jpg";
 import Image from "next/image";
+import { FiExternalLink } from 'react-icons/fi';
 
 export default function Work() {
   const experiences = [
@@ -29,9 +30,8 @@ export default function Work() {
 
         <div className="space-y-4 sm:space-y-6">
           {experiences.map((exp) => (
-            <Link
+            <div
               key={exp.slug}
-              href={`/project/${exp.slug}`}
               className="block group"
             >
               <div className="border hover:border-gray-600 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-900/60 backdrop-blur-sm px-4 sm:px-6 py-5 sm:py-6 transition-all duration-300">
@@ -51,9 +51,12 @@ export default function Work() {
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-50 group-hover:text-white transition-colors mb-1">
                       {exp.title}
                     </h3>
+                    <Link href={`https://www.panhacare.com/`} target="_blank" className="hover:underline">
                     <p className="text-sm sm:text-base text-gray-300 font-medium">
-                      {exp.company}
+                      {exp.company}  <FiExternalLink className='flex-row inline'/>
+                     
                     </p>
+                    </Link>
                     <p className="text-xs sm:text-sm text-gray-400 mt-1">
                       {exp.duration}
                     </p>
@@ -69,7 +72,7 @@ export default function Work() {
                   ))}
                 </ul>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
