@@ -2,7 +2,7 @@ import Herosection from "../app/Home/page";
 import Work from "../app/Experiences/page";
 import Project from "../app/Projects/page";
 import Achivement from "../app/Achievement/page";
-import Skill from "../app/skills/page";
+import Skills from "../app/skills/page";
 import FireflyScene from "./Components/muosetrack";
 import Opensource from "../app/opensorce/page";
 import Footer from "./Components/footer";
@@ -20,7 +20,7 @@ export default function Home() {
         <Work/>
         <Opensource/>
    <Project/>
-     <Skill/>
+   <Skills/>
    <Achivement/>
  <Footer/>
   

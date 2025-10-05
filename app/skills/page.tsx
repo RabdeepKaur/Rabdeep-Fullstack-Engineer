@@ -1,53 +1,59 @@
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs, SiExpress, SiPostgresql, SiTypescript } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
-import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io5";
-import { DiMongodb } from "react-icons/di";
-import { FaPython } from "react-icons/fa6";
-import { SiDjango } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaAws } from "react-icons/fa";
-import { FaDocker } from "react-icons/fa";
-import { SiShadcnui } from "react-icons/si";
-import { SiZod } from "react-icons/si";
-import { SiLangchain } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import { SiPrisma } from "react-icons/si";
-import { TbBrandThreejs } from "react-icons/tb";
+import { FaReact, FaPython, FaAws, FaDocker } from 'react-icons/fa';
+import { SiNextdotjs, SiExpress, SiPostgresql, SiTypescript, SiPrisma, SiLangchain, SiZod } from 'react-icons/si';
+import { GrMysql } from 'react-icons/gr';
+import { IoLogoJavascript, IoLogoNodejs } from 'react-icons/io5';
+import { SiFastapi } from "react-icons/si";
+import { RiTailwindCssFill } from 'react-icons/ri';
+import { TbBrandFramerMotion, TbBrandThreejs } from 'react-icons/tb';
 
-export default function ContactMe() {
+export default function Skills() {
+  const skills = [
+    { Icon: FaReact, title: "React", hoverColor: "hover:text-cyan-400" },
+    { Icon: SiNextdotjs, title: "Next.js", hoverColor: "hover:text-gray-300" },
+    { Icon: SiExpress, title: "Express", hoverColor: "hover:text-gray-400" },
+    { Icon: GrMysql, title: "MySQL", hoverColor: "hover:text-blue-400" },
+    { Icon: SiPostgresql, title: "PostgreSQL", hoverColor: "hover:text-sky-500" },
+    { Icon: IoLogoJavascript, title: "JavaScript", hoverColor: "hover:text-yellow-400" },
+    { Icon: SiTypescript, title: "TypeScript", hoverColor: "hover:text-blue-400" },
+    { Icon: IoLogoNodejs, title: "Node.js", hoverColor: "hover:text-green-400" },
+    { Icon: SiFastapi , title: "FastApi", hoverColor: "hover:text-green-500" },
+    { Icon: SiPrisma, title: "Prisma", hoverColor: "hover:text-indigo-400" },
+    { Icon: FaPython, title: "Python", hoverColor: "hover:text-yellow-300" },
+    { Icon: SiLangchain, title: "Langchain", hoverColor: "hover:text-purple-400" },
+    { Icon: RiTailwindCssFill, title: "Tailwind CSS", hoverColor: "hover:text-sky-400" },
+    { Icon: FaAws, title: "AWS", hoverColor: "hover:text-orange-400" },
+    { Icon: FaDocker, title: "Docker", hoverColor: "hover:text-blue-500" },
+    { Icon: SiZod, title: "Zod", hoverColor: "hover:text-red-400" },
+    { Icon: TbBrandFramerMotion, title: "Framer Motion", hoverColor: "hover:text-pink-500" },
+    { Icon: TbBrandThreejs, title: "Three.js", hoverColor: "hover:text-gray-200" },
+  ];
+
   return (
-<div className="min-h-screen container items-center justify-center flex-col">
-  <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
-    <div className="container">
-  <h2 className="text-2xl text-white mt-5 mb-5">Skills</h2>
+    <div className="min-h-screen container flex items-center justify-center">
+      <div className="w-full max-w-[768px] mx-auto px-4 sm:px-5 lg:px-0 py-8">
+        <div className="container">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 font-bold">
+            Skills
+          </h2>
 
-  <section className="flex flex-col space-y-6">
-    <FaReact title="React" className="hover:text-cyan-400 transition" />
-    <SiNextdotjs title="Next.js" className="hover:text-gray-300 transition" />
-    <SiExpress title="Express" className="hover:text-gray-400 transition" />
-    <GrMysql title="MySQL" className="hover:text-blue-400 transition" />
-    <SiPostgresql title="PostgreSQL" className="hover:text-sky-500 transition" />
-    <IoLogoJavascript title="JavaScript" className="hover:text-yellow-400 transition" />
-    <SiTypescript title="TypeScript" className="hover:text-blue-400 transition" />
-    <IoLogoNodejs title="Node.js" className="hover:text-green-400 transition" />
-    <DiMongodb title="MongoDB" className="hover:text-green-500 transition" />
-    <SiPrisma title="Prisma" className="hover:text-indigo-400 transition" />
-    <FaPython title="Python" className="hover:text-yellow-300 transition" />
-    <SiLangchain title="Langchain" className="hover:text-purple-400 transition" />
-    <SiDjango title="Django" className="hover:text-green-400 transition" />
-    <RiTailwindCssFill title="Tailwind CSS" className="hover:text-sky-400 transition" />
-    <FaAws title="AWS" className="hover:text-orange-400 transition" />
-    <FaDocker title="Docker" className="hover:text-blue-500 transition" />
-    <SiShadcnui title="Shadcn UI" className="hover:text-pink-400 transition" />
-    <SiZod title="Zod" className="hover:text-red-400 transition" />
-    <TbBrandFramerMotion title="Framer Motion" className="hover:text-pink-500 transition" />
-    <TbBrandThreejs title="Three.js" className="hover:text-gray-200 transition" />
-  </section>
-  </div>
-  </div>
-</div>
-   
+          <section className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center group cursor-pointer"
+              >
+                <skill.Icon
+                  title={skill.title}
+                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white transition-all duration-300 transform group-hover:scale-110 ${skill.hoverColor}`}
+                />
+                <span className="text-xs sm:text-sm text-gray-400 mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {skill.title}
+                </span>
+              </div>
+            ))}
+          </section>
+        </div>
+      </div>
+    </div>
   );
 }
-
