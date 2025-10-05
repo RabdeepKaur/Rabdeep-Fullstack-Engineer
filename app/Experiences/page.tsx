@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from "next/link";
-import { AiOutlineRight } from "react-icons/ai";
 import pahacare from "../assests/panhacare.jpg";
 import Image from "next/image";
 
@@ -13,62 +12,67 @@ export default function Work() {
       company: "Panha care",
       duration: "August -- Present (Remote)",
       description: [
-        "Converted Figma designs into a fully responsive Next.js front-end, ensuring a modern and user-friendly UI.",
-        "Developed an SEO-friendly and performance-optimized blog platform using Next.js for better search rankings and faster load times.",
-        "Built a real-time chat application using Ably for live communication, integrated with Appwrite for backend services."
+        "Converted Figma designs into a fully responsive Next.js front-end, ensuring a modern, responsive, and user-friendly UI.",
+
+"Developed an SEO-friendly and performance-optimized blog page using Next.js, featuring individual user profiles and dynamic search functionality based on user ID.",
+        "Built a real-time support chat app using Ably for the chat and Appwrite for the backend . Users logged in with Google oAuth, got their own private channel kinda like one token per user , and whenever someone started a chat, the backend would ping an admin to jump in. The user and admin could then chat one-on-one for 10 minutes approx. Designed the whole system based on the pub/sub modle - it was pretty cool."
       ]
     }
   ];
 
   return (
-    <main className="min-h-screen container items-center justify-center flex-col">
-      <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
-        <div className="container">
-          <h1 className="text-2xl text-white mt-5 mb-5">Work Experience</h1>
+    <main className=" container flex items-center justify-center ">
+      <div className="w-full max-w-[768px] mx-auto px-4 sm:px-5 lg:px-0">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 font-bold">
+          Work Experience
+        </h2>
 
-          <div className="flex flex-col space-y-6">
-            {experiences.map((exp, index) => (
-              <Link
-                key={exp.slug}
-                href={`/project/${exp.slug}`}
-                className="group"
-              >
-                <div className="border rounded-xl shadow-md px-6 py-6 transition">
-                  {/* Header: Image + Title + Company */}
-                  <div className="flex items-center gap-4">
+        <div className="space-y-4 sm:space-y-6">
+          {experiences.map((exp) => (
+            <Link
+              key={exp.slug}
+              href={`/project/${exp.slug}`}
+              className="block group"
+            >
+              <div className="border hover:border-gray-600 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-900/60 backdrop-blur-sm px-4 sm:px-6 py-5 sm:py-6 transition-all duration-300">
+                {/* Header: Image + Title + Company */}
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="flex-shrink-0">
                     <Image
                       src={exp.src}
                       alt={exp.company}
                       width={60}
                       height={60}
-                      className="rounded-full"
+                      className="rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover"
                     />
-                    <div>
-                      <h2 className="text-xl font-semibold text-gray-50 group-hover:text-white">
-                        {exp.title}
-                      </h2>
-                      <p className="text-gray-300">{exp.company}</p>
-                      <p className="text-sm text-gray-400">{exp.duration}</p>
-                    </div>
                   </div>
-
-                  {/* Description Points */}
-                  <ul className="list-disc ml-8 mt-4 space-y-2">
-                    {exp.description.map((point, i) => (
-                      <li key={i} className="text-gray-300">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-
-          
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-50 group-hover:text-white transition-colors mb-1">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-300 font-medium">
+                      {exp.company}
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-1">
+                      {exp.duration}
+                    </p>
+                  </div>
                 </div>
-              </Link>
-            ))}
-          </div>
+
+                {/* Description Points */}
+                <ul className="list-disc ml-4 sm:ml-8 mt-4 space-y-2">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </main>
   );
 }
-

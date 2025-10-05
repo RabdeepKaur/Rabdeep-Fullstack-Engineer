@@ -8,10 +8,10 @@ export default function Herosection(){
 return(
      <>
       {/* Mobile Layout (hidden on desktop) */}
-      <div className="flex items-center justify-center min-h-screen p-4 lg:hidden">
-        <div className="flex flex-col items-center space-y-6 w-full max-w-sm">
+      <div className="flex items-center justify-center min-h-screen  lg:hidden">
+        <div className="flex flex-col items-center  w-full max-w-sm">
           {/* Status Badge */}
-          <div className="flex flex-col items-center justify-center w-full h-[70px] text-white bg-black/80 backdrop-blur-lg rounded-xl shadow-lg border border-gray-700">
+          <div className="flex flex-col items-center justify-center w-full  text-white bg-black/80 backdrop-blur-lg rounded-xl shadow-lg border border-gray-700">
             <div className="flex flex-row items-center space-x-2">
               <FaCircle className="text-green-500 text-sm" />
               <span className="text-sm font-medium">Open for Opportunities</span>

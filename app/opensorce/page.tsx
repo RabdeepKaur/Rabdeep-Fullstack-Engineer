@@ -1,73 +1,138 @@
-     import girlscriptsoc_logo from "../assests/girlscriptsoc_logo.jpg"
-     import  hacktoberfest from "../assests/hacktoberfest.jpg"
-     import Image from "next/image"
+import { VscGitPullRequest } from 'react-icons/vsc';
+import { FiExternalLink } from 'react-icons/fi';
+import { BiGitMerge } from 'react-icons/bi';
 
-
-    export default function Opensource(){
-
-    
-    const Opensource=[
+export default function OpenSourceContributions() {
+  const contributions = [
     {
-      src: girlscriptsoc_logo,
-      company: "Girlscript Summer of Code",
-      duration: "October 2024",
-        description: [
-      " Enhanced the frontend of a legacy game by implementing a dynamic search feature and redesigning the UI, resulting in a 30% increase in user retention.",
-      "Introduced new gameplay mechanics and optimized performance, reducing load time by 40 % and improving overall userexperience.",
-      "Contributed to 6 open-source repositories by raising 10 pull requests, with a 50% merge success rate, demonstrating collaborative development and code quality.",
-      "Achieved 70+ contribution points and was awarded the Explorer Badge for consistent and valuable engagement in open-source development."
-    ]
+      title: "Enhancement: Show checkmark after copy button is clicked in Get Started in seconds section in the landing page ",
+      repo: "shuttle-hq/www",
+      prNumber: 512,
+      status: "open", 
+      link: "https://github.com/shuttle-hq/www/issues/494",
+      description: "Show a temporary checkmark icon replacing the copy icon after the button is clicked, and revert back after ~1 seconds. This provides clear feedback to the user that the copy action was successful."
     },
     {
-      src:hacktoberfest,
-      company: "Hacktoberfest",
-      duration: "October 2024",
-      description: ["Contributed to 5 open-source repositories, raising 5 pull requests with an 80% merge success rate—demonstrating effective collaboration and code quality.",
-      " Implemented a client-side search algorithm with a 95% accuracy rate in predicting user intent, enabling the delivery of more relevant search results to users.",
-      " Achieved all 4 Hacktoberfest badges through consistent and high-quality contributions to open-source repositories."
-      ]
+      title: "The implementation of a Testimonial card feature.",
+      repo: "Rehabify",
+      prNumber: 129,
+      status: "merged",
+      link: "https://github.com/Ratnesh-Team/Rehabify/pull/136",
+      description: "Adding a testimonial card feature to showcase user feedback and reviews."
+    },
+    {
+      title: "To improve the overall layout of the Rock-Paper-Scissors game",
+      repo: "Game_player",
+      prNumber: 62,
+      status: "merged",
+      link: "https://github.com/divyansh-2005/GAME_PLAYER/pull/62",
+      description: "Rearrange the layout so that the message box and reset button are clearly and logically positioned. Add more spacing around the footer to separate it from the main game area, ensuring that it does not overlap or interfere with the core elements of the game."
+    },
+  ];
+
+  const getStatusConfig = (status: string) => {
+    switch(status) {
+      case "merged":
+        return {
+          icon: BiGitMerge,
+          color: "text-purple-400 border-purple-400/30 bg-purple-400/10",
+          label: "Merged"
+        };
+      case "open":
+        return {
+          icon: VscGitPullRequest,
+          color: "text-green-400 border-green-400/30 bg-green-400/10",
+          label: "Open"
+        };
+      case "closed":
+        return {
+          icon: VscGitPullRequest,
+          color: "text-red-400 border-red-400/30 bg-red-400/10",
+          label: "Closed"
+        };
+      default:
+        return {
+          icon: VscGitPullRequest,
+          color: "text-gray-400 border-gray-400/30 bg-gray-400/10",
+          label: "Unknown"
+        };
     }
-]
-    return(
-<>
-<section className='min-h-screen container items-center justify-center flex-col'>
-    <div className="flex md:mt-4 flex-col max-w-[768px] mx-auto p-5 lg:p-0">
-      <div className="container">
-<h1 className='text-2xl text-white mt-5 mb-5'>Open source Contribution</h1>
-        <div className="flex flex-col space-y-6">
-          {Opensource.map((exp, index) => (
-            <div
-              key={index}
-              className="group"
-            >
-              <div className="flex items-center gap-4">
-                <Image
-                  src={exp.src}
-                  alt={exp.company}
-                  width={60}
-                  height={60}
-                  className="rounded-full"
-                />
-                <div>
-                  <p className="text-gray-100">{exp.company}</p>
-                  <p className="text-sm text-gray-200">{exp.duration}</p>
+  };
+
+  return (
+    <div className="min-h-screen container flex items-center justify-center py-12">
+      <div className="w-full max-w-[768px] mx-auto px-4 sm:px-5 lg:px-0">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-8 font-bold">
+          Open Source Contributions
+        </h2>
+
+        <div className="space-y-4">
+          {contributions.map((pr, index) => {
+            const statusConfig = getStatusConfig(pr.status);
+            const StatusIcon = statusConfig.icon;
+
+            return (
+              <a
+                key={index}
+                href={pr.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="border rounded-lg p-4 sm:p-5 hover:bg-gray-800/60 hover:border-gray-600 transition-all duration-300">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                  
+                    <div className={`flex-shrink-0 p-2 rounded-md border ${statusConfig.color}`}>
+                      <StatusIcon className="text-xl sm:text-2xl" />
+                    </div>
+
+                 
+                    <div className="flex-1 min-w-0">
+                     
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3 className="text-white text-base sm:text-lg font-semibold group-hover:text-blue-400 transition-colors">
+                          {pr.title}
+                        </h3>
+                        <FiExternalLink className="flex-shrink-0 text-gray-400 group-hover:text-blue-400 transition-colors mt-1" />
+                      </div>
+
+                    
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-2">
+                        <span className="font-mono">{pr.repo}</span>
+                        <span>•</span>
+                        <span className="font-mono">#{pr.prNumber}</span>
+                        <span>•</span>
+                        <span className={`${statusConfig.color.split(' ')[0]} font-medium`}>
+                          {statusConfig.label}
+                        </span>
+                      </div>
+
+                     
+                      <p className="text-gray-400 text-sm sm:text-base">
+                        {pr.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <ul className="list-disc ml-8 mt-4 space-y-2">
-                {exp.description.map((point, i) => (
-                  <li key={i} className="text-gray-300">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          </div>
+              </a>
+            );
+          })}
         </div>
-        </div>
-  </section>
-</>
 
-    )
+        {/* Add your PR Button */}
+        <div className="mt-8 text-center">
+          <a
+            href="https://github.com/pulls"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3  hover:bg-gray-700 border border-gray-700 hover:border-gray-600 text-white rounded-lg transition-all duration-300"
+          >
+            <VscGitPullRequest className="text-xl" />
+            <span>View All Contributions</span>
+            <FiExternalLink className="text-sm" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -29,7 +29,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className="min-h-screen container flex items-center justify-center">
+    <div className=" container flex items-center justify-center">
       <div className="w-full max-w-[768px] mx-auto px-4 sm:px-5 lg:px-0 py-8">
         <div className="container">
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-6 sm:mb-8 font-bold">
