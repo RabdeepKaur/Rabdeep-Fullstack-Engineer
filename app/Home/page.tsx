@@ -16,7 +16,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 hover:text-amber-300 transition-colors duration-300"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 hover:text-amber-300 transition-colors duration-300 bg-black "
         >
           Rabdeep Kaur Badwal
         </motion.h1>
@@ -47,7 +47,7 @@ export default function HeroSection() {
 
         {/* Intro */}
         <motion.p
-          className="text-lg sm:text-xl text-slate-200 leading-relaxed"
+          className="text-lg sm:text-xl text-slate-200 leading-relaxed bg-black"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}

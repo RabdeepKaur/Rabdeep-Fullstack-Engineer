@@ -65,7 +65,7 @@ export default function Project() {
             Projects
           </motion.h2>
 
-          {/* Animate the cards */}
+  
           <motion.div
             variants={containerVariants}
             initial="hidden"

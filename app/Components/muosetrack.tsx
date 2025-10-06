@@ -1,5 +1,4 @@
 "use client";
-// I wanna use this mouse trackign component but let see what i can do 
 import { useEffect, useRef } from "react";
 
 export default function FireflyScene() {
@@ -11,8 +10,8 @@ export default function FireflyScene() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let enableBloom = true; 
-//star componenets
+    let enableBloom = true;
+
     class Star {
       x: number;
       y: number;
@@ -25,9 +24,9 @@ export default function FireflyScene() {
         this.x = Math.random() * canvas.width;
         this.y = Math.pow(Math.random(), 2.5) * canvas.height * 0.7;
         this.baseAlpha = 0.3 + Math.random() * 0.7;
-        this.twinkleSpeed = 0.003 + Math.random() * 0.003;
+        this.twinkleSpeed = 0.01 + Math.random() * 0.003;
         this.phase = Math.random() * Math.PI * 2;
-        this.size = Math.random() * 2 + 0.3;
+        this.size = Math.random() * 2 + 0.03;
       }
 
       draw(time: number, fireflyPos: { x: number; y: number }, flicker: number) {
@@ -54,9 +53,55 @@ export default function FireflyScene() {
         ctx.fill();
       }
     }
-    
+
+    class ShootingStar {
+      x: number;
+      y: number;
+      length: number;
+      speed: number;
+      angle: number;
+      opacity: number;
+
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height * 0.5;
+        this.length = 15 + Math.random() * 100;
+        this.speed = 4 + Math.random() * 2;
+        this.angle = Math.PI /4; 
+        this.opacity = 0.4 + Math.random() * 0.3;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(
+          this.x + this.length * Math.cos(this.angle),
+          this.y + this.length * Math.sin(this.angle)
+        );
+        ctx.stroke();
+        ctx.restore();
+
+        this.x += this.speed * Math.cos(this.angle);
+        this.y += this.speed * Math.sin(this.angle);
+
+  
+        if (this.x > canvas.width || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+    }
 
     let stars: Star[] = [];
+    let shootingStars: ShootingStar[] = [];
+
     function initStars(count = 400) {
       stars = [];
       for (let i = 0; i < count; i++) {
@@ -64,9 +109,16 @@ export default function FireflyScene() {
       }
     }
 
+    function initShootingStars(count = 1) {
+      shootingStars = [];
+      for (let i = 0; i < count; i++) {
+        shootingStars.push(new ShootingStar());
+      }
+    }
+
     const particle = {
       x: window.innerWidth,
-      y: window.innerHeight ,
+      y: window.innerHeight,
       radius: 5,
       glowRadius: 30,
       angle: 0,
@@ -117,6 +169,11 @@ export default function FireflyScene() {
         star.draw(time, particle, flicker);
       }
 
+      // shooting stars
+      for (const s of shootingStars) {
+        s.draw();
+      }
+
       // glowing aura
       if (enableBloom) {
         ctx.save();
@@ -154,9 +211,11 @@ export default function FireflyScene() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initStars();
+      initShootingStars();
     });
 
     initStars();
+    initShootingStars();
     animate();
 
     return () => {
@@ -167,15 +226,6 @@ export default function FireflyScene() {
 
   return (
     <div className="fixed inset-0 bg-black pointer-events-none z-10">
-    
-      <div className="absolute inset-0 pointer-events-none mix-blend-normal z-10">
-        <div className="light-band"></div>
-        <div className="light-band"></div>
-        <div className="light-band"></div>
-        <div className="stars"></div>
-      </div>
-
-       Firefly Canvas 
       <canvas
         ref={canvasRef}
         id="fireflyCanvas"
