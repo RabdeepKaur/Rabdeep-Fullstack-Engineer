@@ -1,102 +1,104 @@
- import { FaGithub,FaLinkedin, FaTwitter    } from 'react-icons/fa';
+"use client";
+
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaTwitter, FaCircle } from "react-icons/fa";
 import { BiSpreadsheet } from "react-icons/bi";
-import Link from "next/link"
-import { FaCircle } from "react-icons/fa";
-import { FlipWords } from '../Components/flipword';
+import Link from "next/link";
+import { FlipWords } from "../Components/flipword";
 
-export default function Herosection(){
-return(
-     <>
-      {/* Mobile Layout (hidden on desktop) */}
-      <div className="flex items-center justify-center min-h-screen  lg:hidden">
-        <div className="flex flex-col items-center  w-full max-w-sm">
-          {/* Status Badge */}
-          <div className="flex flex-col items-center justify-center w-full  text-white bg-black/80 backdrop-blur-lg rounded-xl shadow-lg border border-gray-700">
-            <div className="flex flex-row items-center space-x-2">
-              <FaCircle className="text-green-500 text-sm" />
-              <span className="text-sm font-medium">Open for Opportunities</span>
-            </div>
-          </div>
+export default function HeroSection() {
+  return (
+    <section className="min-h-screen flex items-center justify-center  text-white">
+      <div className="max-w-3xl w-full text-center px-6 sm:px-8">
+        
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 hover:text-amber-300 transition-colors duration-300"
+        >
+          Rabdeep Kaur Badwal
+        </motion.h1>
 
-          {/* Main Content */}
-          <div className="flex flex-col items-center justify-center w-full min-h-[200px] text-center bg-black/80 backdrop-blur-lg rounded-xl shadow-lg py-6 px-4 border border-gray-700 space-y-4">
-            <p className="text-lg font-semibold text-white">
-              I make <FlipWords words={["Backends", "Frontends", "Websites", "Digital marketing"]} />
-            </p>
-            <p className="font-bold text-2xl text-gray-100">Rabdeep Kaur Badwal</p>
-          </div>
+        {/* Social Links */}
+        <motion.div
+          className="flex justify-center gap-6 text-2xl mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <Link href="https://github.com/RabdeepKaur" target="_blank">
+            <FaGithub className="hover:text-green-500 transition-colors duration-300" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/rabdeep-kaur-35a26925b" target="_blank">
+            <FaLinkedin className="hover:text-blue-600 transition-colors duration-300" />
+          </Link>
+          <Link href="https://x.com/Rabdeep790" target="_blank">
+            <FaTwitter className="hover:text-pink-400 transition-colors duration-300" />
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/13ukFWvqedAB_Fuqw7u9SHLcL42qoQOFc/view?usp=sharing"
+            target="_blank"
+          >
+            <BiSpreadsheet className="hover:text-red-500 transition-colors duration-300" />
+          </Link>
+        </motion.div>
 
-          {/* Description */}
-          <div className="flex flex-col items-center justify-center w-full min-h-[120px] bg-purple-500/10 backdrop-blur-lg rounded-xl shadow-lg py-4 px-4 border border-purple-500/20">
-            <p className="text-sm font-medium text-slate-100 text-center leading-relaxed">
-              I am a Full-Stack Developer who loves building cool websites that make life easier. Alongside Coding, I also work on social media marketing and enjoy technical writing.
-            </p>
-          </div>
+        {/* Intro */}
+        <motion.p
+          className="text-lg sm:text-xl text-slate-200 leading-relaxed"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          I am a Full-Stack Engineer who loves building
+          <span className="px-2 font-semibold text-white">
+            <FlipWords
+              words={["Backends", "Frontends", "Websites", "Digital Marketing"]}
+              className="text-green-300 font-serif"
+            />
+          </span>
+        </motion.p>
 
-          {/* Social Links */}
-          <div className="flex flex-row gap-6 items-center justify-center w-full h-[60px] bg-black/60 backdrop-blur-lg rounded-xl shadow-lg border border-gray-700">
-            <Link href="https://github.com/RabdeepKaur">
-              <FaGithub size={24} color="white" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/rabdeep-kaur-35a26925b">
-              <FaLinkedin size={24} color="white" />
-            </Link>
-            <Link href="https://x.com/Rabdeep790">
-              <FaTwitter size={24} color="white" />
-            </Link>
-            <Link href="https://drive.google.com/file/d/13ukFWvqedAB_Fuqw7u9SHLcL42qoQOFc/view?usp=sharing">
-              <BiSpreadsheet size={24} color="white" />
-            </Link>
-          </div>
-        </div>
+        <motion.div
+          className="flex items-center justify-center gap-2 mt-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.8 }}
+        >
+          <FaCircle className="text-green-500 text-xs animate-pulse" />
+          <span className="text-sm font-medium">Open for Opportunities</span>
+        </motion.div>
+
+        {/* Buttons */}
+        <motion.div
+          className="mt-8 flex justify-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+        <div className="mt-8 flex justify-center gap-4">
+  {/* Hire Me Button with mailto */}
+  <Link href="mailto:rabdeep0202@gmail.com">
+    <button className="bg-green-600 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition-all duration-300">
+      Hire Me
+    </button>
+  </Link>
+
+  {/* Resume Button with external link */}
+  <Link
+    href="https://drive.google.com/file/d/13ukFWvqedAB_Fuqw7u9SHLcL42qoQOFc/view?usp=sharing"
+    target="_blank"
+  >
+    <button className="border border-white hover:bg-white hover:text-black px-6 py-2 rounded-lg font-semibold transition-all duration-300">
+      Resume
+    </button>
+  </Link>
+</div>
+
+        </motion.div>
       </div>
-
-      {/* Original Desktop Layout (hidden on mobile) */}
-      <div className="hidden lg:flex items-center justify-center h-screen z-1">   
-        <div className="flex items-center justify-center h-screen relative mt-1">     
-          {/* First main div */}  
-          <div className="relative flex flex-col items-center justify-center">   
-            {/* Overlapping Div */}   
-            <div className="absolute -top-15 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center w-[300px] h-[80px] text-white bg-black/80 border-0 backdrop-blur-lg rounded-xl shadow-lg py-1 z-10">  
-              <div className="flex flex-row items-center space-x-3">         
-                <FaCircle className="text-green-500 text-xl" />         
-                <span className="text-lg">Open for new Opportunities</span>       
-              </div>   
-            </div>    
-
-            {/* Main Div */}   
-            <div className="flex flex-col items-center justify-center w-[600px] h-[250px] text-3xl backdrop-blur-lg bg-black/80 rounded-xl shadow-lg py-4 border-0 space-y-2">     
-              <p className="text-2xl font-semibold text-white mr-3">    
-                I make <FlipWords words={["Backends", "Frontends", "Websites", "Digital marketing"]} />     
-              </p>     
-              <p className="font-bold text-3xl text-gray-100">Rabdeep Kaur Badwal</p>   
-            </div> 
-          </div>  
-
-          {/* Second div (slightly on bottom and to the right) */}   
-          <div className="absolute bottom-[130px] right-[-300px] flex flex-col items-center justify-center w-[400px] h-[150px] text-xl bg-purple/10 backdrop-blur-lg border-0 rounded-xl shadow-lg py-2">     
-            <p className="text-lg font-semibold text-slate-100 p-4"> 
-              I am a Full-Stack Developer who loves building cool websites that make life easier. Alongside Coding, I also work on social media marketing and enjoy technical writing. 
-            </p>   
-          </div>   
-
-          {/* Third div */}   
-          <div className="absolute bottom-[177px] right-[500px] flex flex-row gap-4 item-center justify-center w-[200px] h-[50px] text-xl backdrop-blur-lg border-0 rounded-xl shadow-lg py-2">     
-            <Link href="https://github.com/RabdeepKaur">    
-              <FaGithub size={30} color="white" /> 
-            </Link> 
-            <Link href="https://www.linkedin.com/in/rabdeep-kaur-35a26925b"> 
-              <FaLinkedin size={30} color="white" />
-            </Link>    
-            <Link href="https://x.com/Rabdeep790">  
-              <FaTwitter size={30} color="white" /> 
-            </Link> 
-            <Link href="https://drive.google.com/file/d/13ukFWvqedAB_Fuqw7u9SHLcL42qoQOFc/view?usp=sharing"> 
-              <BiSpreadsheet size={30} color="white"/>
-            </Link>    
-          </div> 
-        </div>    
-      </div>
-    </>
+    </section>
   );
 }

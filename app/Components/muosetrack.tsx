@@ -25,9 +25,9 @@ export default function FireflyScene() {
         this.x = Math.random() * canvas.width;
         this.y = Math.pow(Math.random(), 2.5) * canvas.height * 0.7;
         this.baseAlpha = 0.3 + Math.random() * 0.7;
-        this.twinkleSpeed = 0.002 + Math.random() * 0.003;
+        this.twinkleSpeed = 0.003 + Math.random() * 0.003;
         this.phase = Math.random() * Math.PI * 2;
-        this.size = Math.random() * 1.2 + 0.3;
+        this.size = Math.random() * 2 + 0.3;
       }
 
       draw(time: number, fireflyPos: { x: number; y: number }, flicker: number) {
@@ -57,7 +57,7 @@ export default function FireflyScene() {
     
 
     let stars: Star[] = [];
-    function initStars(count = 600) {
+    function initStars(count = 400) {
       stars = [];
       for (let i = 0; i < count; i++) {
         stars.push(new Star());

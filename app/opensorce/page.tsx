@@ -1,6 +1,8 @@
+"use cleint"
 import { VscGitPullRequest } from 'react-icons/vsc';
 import { FiExternalLink } from 'react-icons/fi';
 import { BiGitMerge } from 'react-icons/bi';
+import { motion } from "framer-motion";
 
 export default function OpenSourceContributions() {
   const contributions = [
@@ -19,14 +21,6 @@ export default function OpenSourceContributions() {
       status: "merged",
       link: "https://github.com/Ratnesh-Team/Rehabify/pull/136",
       description: "Adding a testimonial card feature to showcase user feedback and reviews."
-    },
-    {
-      title: "To improve the overall layout of the Rock-Paper-Scissors game",
-      repo: "Game_player",
-      prNumber: 62,
-      status: "merged",
-      link: "https://github.com/divyansh-2005/GAME_PLAYER/pull/62",
-      description: "Rearrange the layout so that the message box and reset button are clearly and logically positioned. Add more spacing around the footer to separate it from the main game area, ensuring that it does not overlap or interfere with the core elements of the game."
     },
   ];
 
@@ -58,11 +52,25 @@ export default function OpenSourceContributions() {
         };
     }
   };
+    const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
   return (
     <div className="min-h-screen container flex items-center justify-center py-12">
       <div className="w-full max-w-[768px] mx-auto px-4 sm:px-5 lg:px-0">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white mb-8 font-bold">
+        <h2
+          
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10 ">
           Open Source Contributions
         </h2>
 
@@ -79,7 +87,8 @@ export default function OpenSourceContributions() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="border rounded-lg p-4 sm:p-5 hover:bg-gray-800/60 hover:border-gray-600 transition-all duration-300">
+                <div
+                className="border rounded-lg p-4 sm:p-5 hover:bg-gray-800/60 hover:border-gray-600 transition-all duration-300">
                   <div className="flex items-start gap-3 sm:gap-4">
                   
                     <div className={`flex-shrink-0 p-2 rounded-md border ${statusConfig.color}`}>
@@ -119,13 +128,13 @@ export default function OpenSourceContributions() {
           })}
         </div>
 
-        {/* Add your PR Button */}
+        
         <div className="mt-8 text-center">
           <a
             href="https://github.com/pulls"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3  hover:bg-gray-700 border border-gray-700 hover:border-gray-600 text-white rounded-lg transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3  hover:bg-green-700 border border-gray-700 hover:border-gray-600 text-white rounded-lg transition-all duration-300"
           >
             <VscGitPullRequest className="text-xl" />
             <span>View All Contributions</span>
