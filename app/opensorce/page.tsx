@@ -10,7 +10,7 @@ export default function OpenSourceContributions() {
       title: "Enhancement: Show checkmark after copy button is clicked in Get Started in seconds section in the landing page ",
       repo: "shuttle-hq/www",
       prNumber: 512,
-      status: "open", 
+      status: "Merged", 
       link: "https://github.com/shuttle-hq/www/issues/494",
       description: "Show a temporary checkmark icon replacing the copy icon after the button is clicked, and revert back after ~1 seconds. This provides clear feedback to the user that the copy action was successful."
     },
